@@ -1,0 +1,9 @@
+name: 02-workflow-events
+on: push
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: show the trigger
+              run: echo "i've been triggered by a(n) ${{github.event_name}} event."
+            #   accessing the events using ${{}}
