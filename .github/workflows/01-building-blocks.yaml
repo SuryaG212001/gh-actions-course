@@ -19,3 +19,10 @@ jobs:
 #  and if it fails it will end up with exit code 1 and not 0. note that in gh actions if one step fails all the other step will not run.
             - name: say goodbye
               run: echo "goodbye!" 
+    echo-success:
+        runs-on: ubuntu-latest
+        steps:
+            - name: success step
+              run: |
+                echo "sucess"
+                exit 0
