@@ -1,0 +1,17 @@
+---
+name: surya
+config: 
+  path: first-directory.yaml
+  environment: staging
+colors: 
+  - name: red
+    hex: ff0000
+    experimental:
+      - experimental
+      - accessibility
+  - name: blue
+    hex: 00ff00
+  - name: green
+    hex: oxffooff
+
+---
