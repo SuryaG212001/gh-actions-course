@@ -2,8 +2,8 @@ name: 02-workflow-events
 on: 
     push:
     pull_request:
-    schedule:
-        - cron: '*/10 * * * *'
+    # schedule:
+    #     - cron: '*/10 * * * *'
         # runs every 10 mins
     workflow_dispatch:
         # workflow dispatch allows us to trigger the workflow from the UI
