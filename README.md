@@ -1,9 +1,6 @@
 # gh-actions-course
 github action repository wherein i will be walking you through github
 
-# gh-actions-course
-github action repository wherein i will be walking you through github
-
 gh actions:-> the feature as offered by github includes :
 1.workflows
 2.jobs
@@ -53,15 +50,15 @@ workflow events:
 -> pull_request_review: triggered by a variety of events related to PR reviews(submitting, editting, deleting)
 -> fork: triggered when your repository is forked
 
-# the events can be given as an array or an object
-# eg: array case
-# on:
-# - push
-# - pull
-# eg: object
-# on :
-#     push:
-#     pull_request: for different branch we can have different events this way
+ the events can be given as an array or an object
+ eg: array case
+ on:
+ - push
+ - pull
+ eg: object
+ on :
+     push:
+     pull_request: for different branch we can have different events this way
 
 2.manual trigger:
 -> triggered via the UI: triggered from the actions tab in github
