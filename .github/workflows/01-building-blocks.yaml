@@ -1,0 +1,21 @@
+name: 01-building-blocks
+# This workflow demonstrates the use of building blocks in GitHub Actions. and the name of our workflow is 01-building-blocks.
+on : push
+
+jobs:
+    echo-hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: say hello
+              run: echo "hello world"
+    echo-goodbye:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Failed step
+              run: |
+                echo "this step will fail"
+                exit 1
+# in this above step we are intentionally failing the step to demonstrate error handling.
+#  and if it fails it will end up with exit code 1 and not 0. note that in gh actions if one step fails all the other step will not run.
+            - name: say goodbye
+              run: echo "goodbye!" 
