@@ -12,7 +12,15 @@ jobs:
         runs-on: windows-latest
         steps:
             - name: show os
+              shell: bash #note we have to include the shell type only for window so that it can understand $RUNNER_OS
               run: | 
                 echo "this job is running on a windows runner."
                 echo "Runner os: $RUNNER_OS"
+    mac-os:
+        runs-on: mac-latest
+        steps:
+          - name: mac os
+            run: |
+              echo "this job is running on a mac runner"
+              echo "Runner os: $RUNNER_OS"
                
