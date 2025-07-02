@@ -50,15 +50,15 @@ workflow events:
 -> pull_request_review: triggered by a variety of events related to PR reviews(submitting, editting, deleting)
 -> fork: triggered when your repository is forked
 
- the events can be given as an array or an object
- eg: array case
- on:
- - push
- - pull
- eg: object
- on :
-     push:
-     pull_request: for different branch we can have different events this way
+# the events can be given as an array or an object
+# eg: array case
+# on:
+# - push
+# - pull
+# eg: object
+# on :
+#     push:
+#     pull_request: for different branch we can have different events this way
 
 2.manual trigger:
 -> triggered via the UI: triggered from the actions tab in github
@@ -66,11 +66,45 @@ workflow events:
 -> Triggered from another workflow: Triggered from within another workflow
 
 3. schedule: run the workflow a s a chron job
-github events
+github events. the minimum interval for which github supports cronjob is 5 mins
+
 refer this to generate a cron job expression
 refer for events: https://docs.github.com/en/actions/reference/events-that-trigger-workflows?apiVersion=2022-11-28&versionId=free-pro-team%40latest&category=actions&subcategory=workflows#push
 
 
+#workflow runners:
+->these are the virtual servers that execute jobs from workflows. previously in other sessions we were utilizing only ubuntu runner. there are some other runners too
+
+they include:
+1. github-hosted runners
+2. self hosted runners
 
 
+#github-hosted runners:
+1.  standard
+2.  hosted
+standard:
+windows and ubuntu:
+*   2 cores 
+*   7GB 
+*   14GB disk
 
+mac runner:
+*   3 cores 
+*   14GB 
+*   14GB disk
+
+
+-> these are some managed services. ie., the security update ;packet change everything will be taken care by the github front
+->  a VM is scoped to a job: steps in the same job will share the VM, but the jobs dont sahre the VMs .
+-> so for a new job a new VM will be used
+
+#self-hosted:
+-> run workflows on almost any infrastructure of our choice
+-> full control over the VM infrastructure
+-> it's not managed , meaning we need to take care of OS pathcing, software updates, among other ops tasks
+-> jobs do not necessarily have to run on clean instances.
+
+note:
+-> keep the VM resources in mind, especially when runnning commands that reply on parallel execution. there may be some stumbling upon the available github hosted resources.
+-> we should not use the self hosted runners for a public github repo because on any vlunerability it might directly expose our infra
