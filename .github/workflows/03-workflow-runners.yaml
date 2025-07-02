@@ -7,4 +7,12 @@ jobs:
             - name: Show OS
               run: | #indicates a multiline bash script is about to come
                 echo "this job is running on an ubuntu runner."
-                echo "Runner OS: $RUNNER_OS" 
+                echo "Runner OS: $RUNNER_OS"
+    windows-echo:
+        runs-on: windows-latest
+        steps:
+            - name: show os
+              run: | 
+                echo "this job is running on a windows runner."
+                echo "Runner os: $RUNNER_OS"
+               
