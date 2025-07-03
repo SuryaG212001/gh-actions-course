@@ -16,10 +16,10 @@ jobs:
               run:
                 # cd  04-using-actions/react-app
                 npm ci #npm clean install
-              working-directory: 04-using-actions/react-app #working directory sets the directory in which to run the actions. beacuse the npm clean install commands requires some packages which is not there in teh root directory but inside the 04-using-actions-react-app
+              #working-directory: 04-using-actions/react-app #working directory sets the directory in which to run the actions. beacuse the npm clean install commands requires some packages which is not there in teh root directory but inside the 04-using-actions-react-app
             - name: run unit tests
               run: npm run test #in the package .json there is somethings called as scripts which has certain commands for a react application to run. one amoung which is this run test.
-              working-directory: 04-using-actions/react-app
+              #working-directory: 04-using-actions/react-app
             # 1. checkout the code from the repository
             # 2. install dependencies for out raect application 
             # 3. execute automated tests
