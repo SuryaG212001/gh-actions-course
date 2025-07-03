@@ -1,6 +1,7 @@
 name: 01-building-blocks
 # This workflow demonstrates the use of building blocks in GitHub Actions. and the name of our workflow is 01-building-blocks.
-on : push
+on : workflow_dispatch
+  # push
 
 jobs:
     echo-hello:
